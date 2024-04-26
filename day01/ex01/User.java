@@ -1,12 +1,12 @@
 class	User {
-	int		identifier;
-	String	name;
+	private final int		identifier;
+	private final String	name;
 	int		balance;
 
-	User(int identifier, String name, int initialBalance) {
+	User(String name, int initialBalance) {
 		if (initialBalance < 0)
 			throw new IllegalArgumentException("ERROR: initial balance MUST be positive!");
-		this.identifier = identifier;
+		this.identifier = UserIdsGenerator.getInstance().generateId();
 		this.name = name;
 		this.balance = initialBalance;
 	}

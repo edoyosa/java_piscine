@@ -8,7 +8,8 @@ class Program {
 		userList.addUser(new User("Eleonora", 444));
 		try {
 			User userById = userList.getUserById(2);
-			System.out.println("User with ID: " + userById.getIdentifier());
+			System.out.println("User found by ID:");
+			System.out.println("ID: " + userById.getIdentifier());
 			System.out.println("Name: " + userById.getName());
 			System.out.println("Balance: " + userById.getBalance() + "€");
 		} catch (UserNotFoundException e) {
@@ -16,7 +17,8 @@ class Program {
 		}
 		try {
 			User userByIndex = userList.getUserByIndex(0);
-			System.out.println("\nUser with ID: " + userByIndex.getIdentifier());
+			System.out.println("\nUser found by index:");
+			System.out.println("ID: " + userByIndex.getIdentifier());
 			System.out.println("Name: " + userByIndex.getName());
 			System.out.println("Balance: " + userByIndex.getBalance() + "€");
 		} catch (IndexOutOfBoundsException e) {

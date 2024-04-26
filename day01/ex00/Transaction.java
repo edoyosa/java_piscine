@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.UUID;
 
 class	Transaction {
@@ -9,7 +10,8 @@ class	Transaction {
 
 	Transaction(UUID identifier, User recipient, User sender, String transferCategory, int transferAmount) {
 		if ((transferCategory.equals("credits") && transferAmount <= 0) || (transferCategory.equals("debits") && transferAmount >= 0)) {
-			throw new IllegalArgumentException("ERROR: Invalid transfer amount!");
+			System.out.println("ERROR: Invalid transfer amount!");
+			System.exit(1);
 		}
 		this.identifier = identifier;
 		this.recipient = recipient;

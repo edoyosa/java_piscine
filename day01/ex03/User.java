@@ -1,7 +1,8 @@
 class	User {
-	private final int		identifier;
-	private final String	name;
-	int		balance;
+	private final int				identifier;
+	private final String			name;
+	int								balance;
+	private final TransactionList	transactions;
 
 	User(String name, int initialBalance) {
 		if (initialBalance < 0) {
@@ -11,6 +12,7 @@ class	User {
 		this.identifier = UserIdsGenerator.getInstance().generateId();
 		this.name = name;
 		this.balance = initialBalance;
+		this.transactions = new TransactionLinkedList();
 	}
 
 	int	getIdentifier() {
